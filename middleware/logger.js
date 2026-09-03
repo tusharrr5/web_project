@@ -1,6 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
 const logger = (req, res, next) => {
 
     const log = `
@@ -11,13 +8,7 @@ IP     : ${req.ip}
 ----------------------------------
 `;
 
-    fs.appendFile(
-        path.join(__dirname, "../logs/data.txt"),
-        log,
-        (err) => {
-            if (err) console.log(err);
-        }
-    );
+    console.log(log);
 
     next();
 };
